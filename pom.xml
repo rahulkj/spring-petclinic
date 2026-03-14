@@ -422,9 +422,9 @@
   </profiles>
   <distributionManagement>
     <snapshotRepository>
-        <id>demo-libs-snapshot</id>
+        <id>demo-libs-release</id>
         <name>jfrog-artifacts</name>
-        <url>https://myupbeat.jfrog.io/artifactory/demo-libs-snapshot</url>
+        <url>https://myupbeat.jfrog.io/artifactory/demo-libs-release</url>
     </snapshotRepository>
   </distributionManagement>
 </project>
