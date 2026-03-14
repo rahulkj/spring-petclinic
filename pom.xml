@@ -10,7 +10,7 @@
 
   <groupId>org.springframework.samples</groupId>
   <artifactId>spring-petclinic</artifactId>
-  <version>4.0.0-SNAPSHOT</version>
+  <version>4.0.0</version>
 
   <name>petclinic</name>
 
@@ -307,6 +307,9 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-dependency-plugin</artifactId>
+            <configuration>
+                <uniqueVersion>false</uniqueVersion>
+            </configuration>
             <executions>
               <execution>
                 <id>unpack</id>
@@ -417,4 +420,11 @@
       </build>
     </profile>
   </profiles>
+  <distributionManagement>
+    <snapshotRepository>
+        <id>artifacts</id>
+        <name>jfrog-artifacts</name>
+        <url>https://myupbeat.jfrog.io/artifactory/artifacts</url>
+    </snapshotRepository>
+  </distributionManagement>
 </project>
