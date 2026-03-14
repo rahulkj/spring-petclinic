@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  petclinic:
+    image: myupbeat.jfrog.io/images/petclinic:latest
+    container_name: spring-petclinic
+    ports:
+      - "8000:8080"
+    environment:
+      - JAVA_OPTS=-Xmx512m -Xms256m
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:8080/actuator/health"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 40s
+    restart: unless-stopped
+    networks:
+      - petclinic-network
+
+networks:
+  petclinic-network:
+    driver: bridge
